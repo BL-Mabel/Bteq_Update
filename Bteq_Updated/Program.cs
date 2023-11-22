@@ -1,5 +1,7 @@
+using BusinessLayer.Apis;
 using Microsoft.EntityFrameworkCore;
 using RepoLayer;
+using RepoLayer.Apis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +13,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+builder.Services.AddTransient<IUserBusiness,UserBusiness>();
+builder.Services.AddTransient<IUserRepo, UserRepo>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
