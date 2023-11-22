@@ -1,4 +1,5 @@
 ﻿using CommonLayer.Models;
+using CommonLayer.Models.RequestModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace RepoLayer.Apis
     {
         public UserEntity AdminRegister(AdminRegModel adminRegModel);
         public bool IsPhoneNumberIdExist(string PhoneNumer);
+        public string LoginAdmin(LoginRequest loginReq);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CommonLayer.Models;
+using CommonLayer.Models.RequestModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +49,23 @@ namespace RepoLayer.Apis
         {
             var emailIds = _context.Users.Where(eu => eu.Phone_Number == "91" + PhoneNumer).Count();
             return emailIds > 0;
+        }
+        public string LoginAdmin(LoginRequest loginReq)
+        {
+            try
+            {
+                var PhNumber = _context.Users.Where(x => x.Phone_Number == "91" + loginReq.PhoneNumber).FirstOrDefault();
+                if (PhNumber != null)
+                {
+                    return "{loginReq}login successful";
+                }
+                else
+                    throw new Exception("Login was unsuccessful");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using CommonLayer.Models;
+using CommonLayer.Models.RequestModel;
 using RepoLayer;
 using RepoLayer.Apis;
 using System;
@@ -25,6 +26,11 @@ namespace BusinessLayer.Apis
         public bool IsPhoneNumberIdExist(string PhoneNumer)
         {
             return userRepo.IsPhoneNumberIdExist(PhoneNumer);
+        }
+
+        public string LoginAdmin(LoginRequest loginReq)
+        {
+            return userRepo.LoginAdmin(loginReq);
         }
     }
 }

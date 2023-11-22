@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Apis;
 using CommonLayer.Models;
+using CommonLayer.Models.RequestModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,6 +42,27 @@ namespace Bteq_Updated.Controllers
                 return NotFound(ex);
             }
 
+        }
+        [HttpPost("login")]
+        public IActionResult Login(LoginRequest loginRequest)
+        {
+            try
+            {
+                var result = userBusiness.LoginAdmin(loginRequest);
+                if (result != null)
+                {
+                    return this.Ok(new { success = true, message = "Login Successfully", data = result});
+
+                }
+                else
+                {
+                    return this.NotFound(new { success = false, message = "Login Failed Check phonenumber" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex);
+            }
         }
     }
 }

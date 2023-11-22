@@ -1,4 +1,5 @@
 ﻿using CommonLayer.Models;
+using CommonLayer.Models.RequestModel;
 using RepoLayer;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,6 @@ namespace BusinessLayer.Apis
     {
         public UserEntity AdminRegister(AdminRegModel adminRegModel);
         public bool IsPhoneNumberIdExist(string PhoneNumer);
+        public string LoginAdmin(LoginRequest loginReq);
     }
 }
