@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject.csproj", "{B6AEBF25-3F24-4E0B-939F-94778D77C584}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bteq_Updated", "Bteq_Updated.csproj", "{B6AEBF25-3F24-4E0B-939F-94778D77C584}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoLayer", "..\RepoLayer\RepoLayer.csproj", "{DA5197D1-3B80-4B36-8DEE-AF7127D37CA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepoLayer", "..\RepoLayer\RepoLayer.csproj", "{DA5197D1-3B80-4B36-8DEE-AF7127D37CA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "..\BusinessLayer\BusinessLayer.csproj", "{BD965EE1-C9D9-461B-A352-8B8462AA0DC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "..\BusinessLayer\BusinessLayer.csproj", "{BD965EE1-C9D9-461B-A352-8B8462AA0DC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLayer", "..\CommonLayer\CommonLayer.csproj", "{1DAF3F71-0C5A-4460-9771-957178122EB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonLayer", "..\CommonLayer\CommonLayer.csproj", "{1DAF3F71-0C5A-4460-9771-957178122EB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
