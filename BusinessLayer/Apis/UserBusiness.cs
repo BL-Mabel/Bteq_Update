@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UtilityLayer.RequestModel;
 
 namespace BusinessLayer.Apis
 {
@@ -23,6 +24,11 @@ namespace BusinessLayer.Apis
               return userRepo.AdminRegister(adminRegModel);
         }
 
+        public Task<AuthenticateResponse> AuthenticateOTP(AuthenticateReqModel authenticateReq)
+        {
+           return userRepo.AuthenticateOTP(authenticateReq);
+        }
+
         public bool IsPhoneNumberIdExist(string PhoneNumer)
         {
             return userRepo.IsPhoneNumberIdExist(PhoneNumer);
@@ -31,6 +37,11 @@ namespace BusinessLayer.Apis
         public string LoginAdmin(LoginRequest loginReq)
         {
             return userRepo.LoginAdmin(loginReq);
+        }
+
+        public Task<string> SendOtpAsync(string phoneNumber)
+        {
+            return userRepo.SendOtpAsync(phoneNumber);
         }
     }
 }

@@ -3,6 +3,7 @@ using CommonLayer.Models;
 using CommonLayer.Models.RequestModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using UtilityLayer.RequestModel;
 
 namespace Bteq_Updated.Controllers
 {
@@ -51,7 +52,7 @@ namespace Bteq_Updated.Controllers
                 var result = userBusiness.LoginAdmin(loginRequest);
                 if (result != null)
                 {
-                    return this.Ok(new { success = true, message = "Login Successfully", data = result});
+                    return this.Ok(new { success = true, message = "Login Successfully", data = result });
 
                 }
                 else
@@ -64,5 +65,26 @@ namespace Bteq_Updated.Controllers
                 return NotFound(ex);
             }
         }
+            [HttpPost("authenticate")]
+            public IActionResult VerifyOtp(AuthenticateReqModel reqModel)
+            {
+            try
+            {
+                var res = userBusiness.AuthenticateOTP(reqModel);
+                if (res.Result == null)
+                {
+                    return NotFound(new { success = false, message = "otp verification failed", data = res.Result });
+                }
+                else
+                {
+                    return Ok(new { success = true, message = "otp verified successfully", data = res.Result });
+                }
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex);
+            }
+            }
+        
     }
 }
